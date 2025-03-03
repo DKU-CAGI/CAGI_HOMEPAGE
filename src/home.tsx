@@ -60,7 +60,7 @@ function Home() {
   return (
     <Container isActive={isActive}>
       <header className="page-header">
-        <a>
+        <a href = "/home">
           <Logo src="cagi_logo.png" alt="로고 이미지" />
         </a>
         <Menu_btn isClicked={isClicked} onClick={() => setIsClicked((prev) => !prev)} />
