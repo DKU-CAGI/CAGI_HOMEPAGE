@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./home.css";
 
 const Container: React.FC<{ children: React.ReactNode; isActive: boolean;}> = ({
@@ -50,6 +50,7 @@ function Home() {
   const location = useLocation();
   const [isActive, setIsActive] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (location.state?.from === "loading") {
@@ -92,7 +93,7 @@ function Home() {
         </div>
       </main>
       <div className={`menu-container ${isClicked ? "active" : "deactivate"}`}>
-        <a href="">
+        <a onClick={()=> navigate("/introducing")}>
           <object data="svg/check-svgrepo-com.svg" width="39px" height="40px"></object>Introducing
         </a>
         <hr />
@@ -109,9 +110,6 @@ function Home() {
         </a>
         <hr />
       </div>
-      <footer className="page-footer">
-        <p className="footer-phrase">©CAGI. 2025 All rights reserved.</p>
-      </footer>
     </Container>
   );
 }

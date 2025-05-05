@@ -1,0 +1,17 @@
+.page-footer{
+    width: 100dvw;
+    height: 45px;
+    background-color: #000000;
+    opacity: 80%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
+.page-footer > p{
+    width: 100%;
+    color: #FFF8F8;
+    font-size: 17px;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+}
